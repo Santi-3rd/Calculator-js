@@ -1,8 +1,14 @@
 
-let num1 = 0;
-let operator = '';
-let num2 = 0;
+let display = document.querySelector('#display');
+    display.textContent = '0'
 
+let num1 = 2;
+let operator = '';
+let num2 = 2;
+
+function displayHandler() {
+    
+}
 
 function add() {
     return num1 + num2
@@ -20,6 +26,12 @@ function divide() {
     return num1 / num2
 }
 
-function operate() {
-    
+console.log(add())
+console.log(subtract())
+console.log(multiply())
+console.log(divide())
+
+
+function operate(num1, operator, num2) {
+
 }

@@ -1,33 +1,38 @@
 
-let startingDisplay = document.querySelector('#display');
+let startingNum = document.querySelector('#display');
 
-let newDisplay = '0'
+let newNum = '0'
 
-let num1 = 2;
+let num1;
 let operator = '';
-let num2 = 2;
+let total = 0;
+// let num2;
 
 let digits = document.querySelectorAll(".digits button");
 digits.forEach(button => {
     button.onclick = function() {
-        if (newDisplay === '0' && button.innerText !== '0') {
-            newDisplay = button.innerText;
+        if (newNum === '0' && button.innerText !== '0') {
+            newNum = button.innerText;
         } else {
-            newDisplay += button.innerText;
+            newNum += button.innerText;
         }
-        startingDisplay.innerText = newDisplay
+        startingNum.innerText = newNum
     };
 });
+
 
 let operators = document.querySelectorAll(".operators button");
 operators.forEach(button => {
     button.onclick = function() {
-        operator = button.innerText
+        num1 = newNum
+        operator = button.innerText;
+        newNum = '0'
     }
-})
+});
+
 
 function add() {
-    return num1 + num2
+    return Number(num1) + Number(newNum)
 }
 
 function subtract() {
@@ -44,8 +49,8 @@ function divide() {
 
 clear = document.querySelector('#clear');
 clear.onclick = function() {
-    startingDisplay.textContent = '0'
-    newDisplay = '0'
+    startingNum.textContent = '0'
+    newNum = '0'
 }
 
 // console.log(add())
@@ -53,7 +58,7 @@ clear.onclick = function() {
 // console.log(multiply())
 // console.log(divide())
 
-
-function operate(num1, operator, num2) {
-
+let equals = document.querySelector('#equals')
+equals.onclick = function operate(num1, operator, newNum) {
+    console.log(add())
 }

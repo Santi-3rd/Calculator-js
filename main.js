@@ -16,6 +16,7 @@ digits.forEach(button => {
             newNum += button.innerText;
         }
         startingNum.innerText = newNum
+        console.log(num1,newNum)
     };
 });
 
@@ -37,11 +38,11 @@ function divide() {
 
 clear = document.querySelector('#clear');
 clear.onclick = function() {
-    startingNum.textContent = '0'
-    newNum = '0'
-    operator = ''
-    num1 = '0'
-    total = '0'
+    startingNum.textContent = '0';
+    newNum = '0';
+    operator = '';
+    num1 = '0';
+    total = '0';
 }
 
 function operate() {
@@ -63,6 +64,7 @@ function operate() {
         console.log(num1,operator,newNum + " = " + total);
     }
     num1 = String(total);
+    console.log(num1,newNum);
 
 }
 
@@ -73,9 +75,13 @@ let operators = document.querySelectorAll(".operators button");
 operators.forEach(button => {
     button.onclick = function() {
         if (operator == '') {
-            num1 = newNum
+            num1 = newNum;
+        } else if (operator != '') {
+            operate();
         }
         operator = button.innerText;
-        newNum = '0'
+        newNum = '0';
+        // operate();
     }
 });
+// operators.onclick = operate;

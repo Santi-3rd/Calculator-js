@@ -19,18 +19,6 @@ digits.forEach(button => {
     };
 });
 
-
-let operators = document.querySelectorAll(".operators button");
-operators.forEach(button => {
-    button.onclick = function() {
-        if (operator == '') {
-            num1 = newNum
-        }
-        operator = button.innerText;
-        newNum = '0'
-    }
-});
-
 function add() {
     return Number(num1) + Number(newNum)
 }
@@ -56,25 +44,38 @@ clear.onclick = function() {
     total = '0'
 }
 
+function operate() {
+    if (operator == '+') {
+        total = add();
+        startingNum.textContent = total;
+        console.log(num1,operator,newNum + " = " + total);
+    } else if (operator == '-') {
+        total = subtract();
+        startingNum.textContent = total;
+        console.log(num1,operator,newNum + " = " + total);
+    } else if (operator == '÷') {
+        total = divide();
+        startingNum.textContent = total;
+        console.log(num1,operator,newNum + " = " + total);
+    } else if (operator == 'x') {
+        total = multiply();
+        startingNum.textContent = total;
+        console.log(num1,operator,newNum + " = " + total);
+    }
+    num1 = String(total);
+
+}
 
 let equals = document.querySelector('#equals')
-equals.onclick = function operate() {
-    if (operator == '+') {
-        total = add()
-        startingNum.textContent = total
-        console.log(num1,operator,newNum + " = " + total)
-    } else if (operator == '-') {
-        total = subtract()
-        startingNum.textContent = total
-        console.log(num1,operator,newNum + " = " + total)
-    } else if (operator == '÷') {
-        total = divide()
-        startingNum.textContent = total
-        console.log(num1,operator,newNum + " = " + total)
-    } else if (operator == 'x') {
-        total = multiply()
-        startingNum.textContent = total
-        console.log(num1,operator,newNum + " = " + total)
+equals.onclick = operate;
+
+let operators = document.querySelectorAll(".operators button");
+operators.forEach(button => {
+    button.onclick = function() {
+        if (operator == '') {
+            num1 = newNum
+        }
+        operator = button.innerText;
+        newNum = '0'
     }
-    num1 = String(total)
-}
+});

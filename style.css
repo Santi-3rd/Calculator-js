@@ -18,16 +18,41 @@ body {
     border: solid;
     border-radius: 15px;
     padding: 20px; 
+    background-color: rgba(105, 109, 133, 0.84);
+    box-shadow: 3px 3px 5px 3px rgba(0,0,0,0.5);
 }
+
+#screen {
+    padding: 10px 20px;
+    border: solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: rgb(149, 199, 149);
+    font-size: 40px;
+    min-width: 200px; 
+    min-height: 100px;
+}
+
+#second-display {
+    min-width: 50px; 
+    min-height: 50px;
+    font-size: 25px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#display {
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 .all-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
 }
-
- /* .zero {
-    grid-column: span 2;
-} */
 
 #equals {
     grid-column: span 2;
@@ -36,7 +61,31 @@ body {
 button {
     padding: 20px;
     border: solid;
-    border-radius: 5px;
-    background-color: gray;
-    font-size: 20px;
+    border-radius: 40px;
+    font-size: 25px;
+    box-shadow: 2px 1px 4px 0px rgba(0,0,0,0.5);
 }
+
+button:hover {
+    background-color: azure;
+}
+
+button:active {
+    background-color: rgb(193, 203, 203);
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+#operators, #equals{
+    background-color: rgb(67, 124, 185);
+    border-color: black;
+    color: white;
+}
+#operators:hover, #equals:hover {
+    background-color: rgb(49, 87, 128);
+}
+
+#operators:active, #equals:active {
+    background-color: rgb(82, 152, 226);
+}
+

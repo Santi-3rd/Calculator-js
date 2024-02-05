@@ -1,8 +1,9 @@
 
 let startingNum = document.querySelector('#display');
 
-let newNum;
+let secondDisplay = document.querySelector('#second-display');
 
+let newNum;
 let num1;
 let operator = '';
 let total = 0;
@@ -53,6 +54,7 @@ function modulo() {
 
 function clear() {
     startingNum.textContent = '0';
+    secondDisplay.textContent = ''
     newNum = undefined;
     operator = '';
     num1 = '0';
@@ -63,10 +65,15 @@ let clearScrn = document.querySelector('#clear');
 clearScrn.onclick = clear
 
 function operate() {
-    if (newNum === undefined){
+    if (num1 === undefined) {
+        num1 = '0'
+    } else if (newNum === undefined){
         total = num1;
         startingNum.textContent = total;
     } else if ( operator == '÷' && newNum == '0'){
+        startingNum.textContent = "Stop that";
+        clear;
+    } else if ( operator == '%' && newNum == '0'){
         startingNum.textContent = "Stop that";
         clear;
     } else if (operator == '+') {
@@ -90,6 +97,7 @@ function operate() {
         startingNum.textContent = total;
         console.log(num1,operator,newNum + " = " + total);
     }
+    secondDisplay.textContent = num1 + ' ' + operator + ' ' + newNum + " = ";
     num1 = String(total);
 
 }
@@ -103,8 +111,15 @@ operators.forEach(button => {
         if (operator == '') {
             num1 = newNum;
         } else if (operator != '') {
+            if (num1 == undefined) {
+                num1 = '0'
+            }
+            if (newNum == undefined) {
+                newNum = '0'
+            }
             operate();
-        } 
+            secondDisplay.textContent = num1 + ' ' + operator;
+        }
         operator = button.innerText;
         newNum = undefined;
     }

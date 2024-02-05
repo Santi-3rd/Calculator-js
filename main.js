@@ -97,7 +97,10 @@ function operate() {
         startingNum.textContent = total;
         console.log(num1,operator,newNum + " = " + total);
     }
-    secondDisplay.textContent = num1 + ' ' + operator + ' ' + newNum + " = ";
+
+    if (operator != '')  {
+        secondDisplay.textContent = num1 + ' ' + operator + ' ' + newNum + " = ";
+    }
     num1 = String(total);
 
 }

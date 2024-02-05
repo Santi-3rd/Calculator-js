@@ -13,9 +13,30 @@ body {
     padding: 10px;
     margin-top: 50px;
 }
-
+#calculator {
+    width: 400px;
+    border: solid;
+    border-radius: 15px;
+    padding: 20px; 
+}
 .all-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+}
+
+ /* .zero {
+    grid-column: span 2;
+} */
+
+#equals {
+    grid-column: span 2;
+}
+
+button {
+    padding: 20px;
+    border: solid;
+    border-radius: 5px;
+    background-color: gray;
+    font-size: 20px;
 }

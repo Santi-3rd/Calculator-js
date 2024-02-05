@@ -7,7 +7,7 @@ let num1;
 let operator = '';
 let total = 0;
 
-let digits = document.querySelectorAll(".digits button");
+let digits = document.querySelectorAll(".all-buttons button");
 digits.forEach(button => {
     button.onclick = function() {
         if (newNum === undefined && button.innerText !== undefined) {
@@ -90,7 +90,7 @@ function operate() {
 let equals = document.querySelector('#equals')
 equals.onclick = operate;
 
-let operators = document.querySelectorAll(".operators button");
+let operators = document.querySelectorAll("#operators");
 operators.forEach(button => {
     button.onclick = function() {
         if (operator == '') {

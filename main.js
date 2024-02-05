@@ -47,6 +47,9 @@ function multiply() {
 function divide() {
     return Number(num1) / Number(newNum)
 }
+function modulo() {
+    return Number(num1) % Number(newNum)
+}
 
 function clear() {
     startingNum.textContent = '0';
@@ -80,6 +83,10 @@ function operate() {
         console.log(num1,operator,newNum + " = " + total);
     } else if (operator == 'x') {
         total = multiply();
+        startingNum.textContent = total;
+        console.log(num1,operator,newNum + " = " + total);
+    } else if (operator == '%') {
+        total = modulo();
         startingNum.textContent = total;
         console.log(num1,operator,newNum + " = " + total);
     }
